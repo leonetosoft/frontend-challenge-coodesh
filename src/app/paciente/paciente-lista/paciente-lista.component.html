@@ -1,4 +1,4 @@
-<p-dialog [(visible)]="selectedPatient" [modal]="true" [draggable]="false" (onHide)="close()" [style]="{'width': '400px'}"
+<p-dialog [(visible)]="selectedPatient" [modal]="true" [draggable]="false" (onHide)="close()" [responsive]="true" [style]="{'width': '400px'}"
 [contentStyle]="{'overflow': 'visible'}" [closeOnEscape]="true" [resizable]="false">
     <app-paciente-visualizar [patient]="selectedPatient" *ngIf="selectedPatient"></app-paciente-visualizar>
 </p-dialog>
@@ -11,6 +11,9 @@
                     <input type="text" formControlName="global" pInputText placeholder="find by name or nationality ...">
                     <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
                 </div>
+            </div>
+            <div class="p-col-12 mobile__filter animate__animated animate__fadeIn">
+                <p-dropdown [options]="genderSelect" formControlName="gender" [style]="{'width':'100%'}"></p-dropdown>
             </div>
             <div class="p-col-12" *ngIf="isError">
                 <p-message severity="error" text="Error loading page content"></p-message>
@@ -31,9 +34,9 @@
                     <tbody>
                         <tr *ngFor="let rs of filter()" class="animate__animated animate__fadeIn">
                             <td><img [src]="rs.picture.thumbnail"></td>
-                            <td>{{ rs.name.first }} {{ rs.name.last }} ({{rs.nat}})</td>
-                            <td class="center">{{ rs.gender }}</td>
-                            <td class="center">{{ rs.registered.date | date: 'dd/MM/yyyy'}} ({{rs.registered.age}} y)
+                            <td><span class="mobile__label">Name: </span> {{ rs.name.first }} {{ rs.name.last }} ({{rs.nat}})</td>
+                            <td class="center"><span class="mobile__label">Gender </span>{{ rs.gender }}</td>
+                            <td class="center"><span class="mobile__label">Birth: </span>{{ rs.registered.date | date: 'dd/MM/yyyy'}} ({{rs.registered.age}} y)
                             </td>
                             <td><p-button icon="pi pi-eye" (onClick)="select(rs)"></p-button></td>
                         </tr>

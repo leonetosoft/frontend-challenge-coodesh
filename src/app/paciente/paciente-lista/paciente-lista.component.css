@@ -3,7 +3,6 @@
     margin: 25px 0;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     width: 100%;
 }
@@ -37,4 +36,64 @@
 
 img {
     border-radius: 50%;
+  }
+
+.mobile__label {
+    display: none;
+}
+
+.mobile__filter {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    table {
+      border: 0;
+    }
+
+    .mobile__label {
+        display: inline;
+        font-weight: bold;
+    }
+
+    .mobile__filter {
+        display: inline;
+    }
+    
+  
+    table caption {
+      font-size: 1.3em;
+    }
+    
+    table thead {
+      display: none;
+    }
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+    }
+    
+    table td::before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
   }
