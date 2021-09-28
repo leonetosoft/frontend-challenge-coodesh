@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SelectItem } from 'primeng/api';
@@ -11,7 +11,7 @@ import { finalize } from 'rxjs/operators';
   styleUrls: ['./paciente-lista.component.css'],
   providers: [PacienteService, FormBuilder]
 })
-export class PacienteListaComponent implements OnInit, OnDestroy {
+export class PacienteListaComponent implements OnInit {
   results: Result[] = [];
   page = 0;
   formGroup: FormGroup;
@@ -37,10 +37,6 @@ export class PacienteListaComponent implements OnInit, OnDestroy {
       global: [undefined],
       gender: [undefined],
     });
-  }
-
-  ngOnDestroy(): void {
-    debugger;
   }
 
   ngOnInit(): void {
