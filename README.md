@@ -4,6 +4,12 @@ Sistema desenvolvido para empresa *Pharma Inc* para facilitar a gestão e visual
 
 challenge by coodesh
 
+![image](https://user-images.githubusercontent.com/3596786/135015950-02c15524-4d4b-476a-ada8-7a4338ade952.png)
+![image](https://user-images.githubusercontent.com/3596786/135015974-7682c198-1597-45bd-bd8b-6f3e455ab3ba.png)
+
+
+challenge by coodesh
+
 # Frameworks Utilizados
 
  - [Angular v12](https://angular.io/)
