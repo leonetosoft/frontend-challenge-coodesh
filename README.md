@@ -4,7 +4,10 @@ Sistema desenvolvido para empresa *Pharma Inc* para facilitar a gestão e visual
 
 challenge by coodesh
 
-![image](https://user-images.githubusercontent.com/3596786/135015950-02c15524-4d4b-476a-ada8-7a4338ade952.png)
+### lista de pacientes
+![image](https://user-images.githubusercontent.com/3596786/135016114-d959e2b8-f10e-4500-8bc8-2ff1e73e47c6.png)
+
+### visualizar paciente
 ![image](https://user-images.githubusercontent.com/3596786/135015974-7682c198-1597-45bd-bd8b-6f3e455ab3ba.png)
 
 
