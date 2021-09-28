@@ -24,7 +24,7 @@ challenge by coodesh
 - Abra no seu navegador a url:
 - `http://localhost:4200/`
 - Pronto !
-- 
+
 ### dev: usando docker
 Testando utilizando docker v20 e docker compose 1.29.2.
 
