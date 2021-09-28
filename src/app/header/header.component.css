@@ -1,0 +1,9 @@
+.header {
+    background-color: #141414;
+    padding: 10px;
+    color: white;
+}
+
+.header__logo {
+    font-weight: bold;
+}

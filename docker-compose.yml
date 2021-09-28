@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+    pharmaweb:
+            build: 
+                context: ./
+                dockerfile: Dockerfile.dev
+            container_name: pharmaweb
+            restart: always
+            tty: true
+            ports: 
+              - '4200:4200'
+            volumes:
+                -  ./:/app
+            command: 'npm run start-docker'

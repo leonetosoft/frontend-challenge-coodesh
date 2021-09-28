@@ -1,0 +1,40 @@
+<p-toast position="top-left"></p-toast>
+
+<div class="p-text-center highlight__view">{{patient?.name?.first}} {{patient?.name?.last}}, {{patient?.gender}} -
+    {{patient?.nat}}</div>
+
+<div class="p-d-flex p-jc-center">
+    <div class="p-mr-2">
+        <img [src]="patient?.picture?.large">
+    </div>
+</div>
+
+
+<div class="p-text-center no__highlight__view">Mail: {{patient?.email}}</div>
+
+<div class="p-text-center no__highlight__view">Birth: {{patient?.registered?.date | date: 'dd/MM/yyyy'}}</div>
+
+<div class="p-text-center no__highlight__view">Phone: {{patient?.phone}}</div>
+
+<div class="p-text-center no__highlight__view label">Adress</div>
+
+<div class="p-text-center no__highlight__view">{{patient?.location?.country}}, {{patient?.location?.city}} -
+    {{patient?.location?.state}}
+</div>
+
+<div class="p-text-center no__highlight__view">{{patient?.location?.street?.name}},
+    {{patient?.location?.street?.number}} -
+    {{patient?.location?.postcode}}</div>
+<div class="p-text-center no__highlight__view label">User Id</div>
+<div class="p-text-center no__highlight__view">{{patient?.login?.uuid}}</div>
+<div class="p-text-center no__highlight__view label">User Link</div>
+
+<div class="p-grid p-fluid">
+    <div class="p-col-12">
+        <div class="p-inputgroup">
+            <input type="text" [(ngModel)]="link" pInputText placeholder="Keyword">
+            <p-button type="button" icon="pi pi-copy" (onClick)="copyLink()" id="link"></p-button>
+            
+        </div>
+    </div>
+</div>

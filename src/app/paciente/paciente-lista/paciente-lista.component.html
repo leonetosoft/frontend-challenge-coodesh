@@ -1,0 +1,52 @@
+<p-dialog [(visible)]="selectedPatient" [modal]="true" [draggable]="false" (onHide)="close()" [style]="{'width': '400px'}"
+[contentStyle]="{'overflow': 'visible'}" [closeOnEscape]="true" [resizable]="false">
+    <app-paciente-visualizar [patient]="selectedPatient" *ngIf="selectedPatient"></app-paciente-visualizar>
+</p-dialog>
+
+<form [formGroup]="formGroup">
+    <p-card header="List of Patients">
+        <div class="p-grid">
+            <div class="p-col-12 animate__animated animate__fadeIn">
+                <div class="p-inputgroup">
+                    <input type="text" formControlName="global" pInputText placeholder="find by name or nationality ...">
+                    <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
+                </div>
+            </div>
+            <div class="p-col-12" *ngIf="isError">
+                <p-message severity="error" text="Error loading page content"></p-message>
+            </div>
+            <div class="p-col-12">
+                <table class="styled-table animate__animated animate__fadeIn">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>
+                                <p-dropdown [options]="genderSelect" formControlName="gender"></p-dropdown>
+                            </th>
+                            <th>Birth</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let rs of filter()" class="animate__animated animate__fadeIn">
+                            <td><img [src]="rs.picture.thumbnail"></td>
+                            <td>{{ rs.name.first }} {{ rs.name.last }} ({{rs.nat}})</td>
+                            <td class="center">{{ rs.gender }}</td>
+                            <td class="center">{{ rs.registered.date | date: 'dd/MM/yyyy'}} ({{rs.registered.age}} y)
+                            </td>
+                            <td><p-button icon="pi pi-eye" (onClick)="select(rs)"></p-button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="p-d-flex p-jc-center">
+            <div class="p-mr-2">
+                <button pButton type="button" class="p-button-raised p-button-rounded" 
+                label="Loading more" 
+                [icon]="!isLoading ? 'pi pi-refresh' : 'pi pi-spin pi-spinner'" iconPos="right" (click)="loadMore()"></button></div>
+        </div>
+    </p-card>
+</form>
